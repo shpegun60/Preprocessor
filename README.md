@@ -9,3 +9,7 @@
  
  # Supported C standards:
  *      All after GNU/ISO C99
+ 
+ Compilation checked with "Compiler Explorer"
+ * Github: https://github.com/compiler-explorer/compiler-explorer
+ * Web: https://godbolt.org/
