@@ -1,0 +1,58 @@
+/*
+ *	CREATED BY SHPEGUN60
+ *
+ *  PREPROCESSOR - a library for invoking the devil in the C99 or later programming language
+ *
+ *  Supporeted Compilers:
+ *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
+ *             you must add /Zc:preprocessor to your compilation flags.
+ *      GCC: All compilers supported
+ *      Clang: All compilers supported
+ *
+ *  Supported C standards:
+ *      All after GNU/ISO C99
+ */
+
+#ifndef __PREPROCESSOR_H__
+#define __PREPROCESSOR_H__ 1
+
+/* -- Headers -- */
+
+#include "preprocessor_arguments.h"
+#include "preprocessor_arithmetic.h"
+#include "preprocessor_base.h"
+#include "preprocessor_boolean.h"
+#include "preprocessor_char_eq.h"
+#include "preprocessor_comparison.h"
+#include "preprocessor_complement.h"
+#include "preprocessor_concatenation.h"
+#include "preprocessor_cycle.h"
+#include "preprocessor_detection.h"
+#include "preprocessor_div.h"
+#include "preprocessor_ctx.h"
+#include "preprocessor_if.h"
+#include "preprocessor_keyword_eq.h"
+#include "preprocessor_logical.h"
+#include "preprocessor_map.h"
+#include "preprocessor_nat_eq.h"
+#include "preprocessor_serial.h"
+#include "preprocessor_stringify.h"
+#include "preprocessor_symbol.h"
+#include "preprocessor_template.h"
+#include "preprocessor_tuple.h"
+#include "preprocessor_type_eq.h"
+
+
+#if defined(_MSC_VER)
+#
+#   if (_MSC_VER < 1926)
+#       error do not supported MSVC compiler, supports only after Visual Studio 2019 verion 16.6 and compiler version after--> msvc v19.26
+#   else
+#       warning _MSC_VER: User must add /Zc:preprocessor to compilation flags, see "https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/"
+#   endif /* (_MSC_VER < 1926) */
+#
+#endif /* defined(_MSC_VER) */
+
+
+
+#endif /* __PREPROCESSOR_H__ */

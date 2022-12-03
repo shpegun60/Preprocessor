@@ -1,0 +1,1186 @@
+/*
+ *	CREATED BY SHPEGUN60
+ *
+ *  PREPROCESSOR DIVISION MACROCES
+ */
+
+#ifndef __PREPROCESSOR_DIV_H__
+#define __PREPROCESSOR_DIV_H__ 1
+
+
+/************************************************************************************************************************************************************
+ *  HEAD, TAIL, SND VARIADIC GETTING
+ *
+ *      PREPROCESSOR_DIV_CHECKED(10, 1)     // expands to 10
+ *      PREPROCESSOR_DIV_CHECKED(10, 2)     // expands to 5
+ *      PREPROCESSOR_DIV_CHECKED(10, 3)     // expands to nothing
+ *      PREPROCESSOR_DIV_CHECKED(0, 5)      // expands to 0
+ *      PREPROCESSOR_DIV_CHECKED(5, 5)      // expands to 1
+ *      PREPROCESSOR_DIV_CHECKED(0, 2)      // expands to 0
+ *      PREPROCESSOR_DIV_CHECKED(2, 0)      // expands to 0
+ *
+ */
+#define PREPROCESSOR_DIV_CHECKED(x, y)                                                                                      \
+    PREPROCESSOR_IF_ELSE(PREPROCESSOR_OR(PREPROCESSOR_NAT_EQ(x, 0), PREPROCESSOR_NAT_EQ(y, 0))) (                           \
+        0,                                                                                                                  \
+        PREPROCESSOR_IF_ELSE(PREPROCESSOR_NAT_EQ(y, 1)) (                                                                   \
+            x,                                                                                                              \
+            PREPROCESSOR_IF_ELSE(PREPROCESSOR_NAT_EQ(x, y)) (                                                               \
+                1,                                                                                                          \
+                PREPROCESSOR_UNTUPLE(PREPROCESSOR_ARGS_SND(PREPROCESSOR_DIV_##x##_##y, (PREPROCESSOR_EMPTY())))             \
+            )                                                                                                               \
+        )                                                                                                                   \
+    )
+
+
+
+#define PREPROCESSOR_DIV_4_2 ~, (2)
+
+#define PREPROCESSOR_DIV_6_2 ~, (3)
+#define PREPROCESSOR_DIV_6_3 ~, (2)
+
+#define PREPROCESSOR_DIV_8_2 ~, (4)
+#define PREPROCESSOR_DIV_8_4 ~, (2)
+
+#define PREPROCESSOR_DIV_9_3 ~, (3)
+
+#define PREPROCESSOR_DIV_10_2 ~, (5)
+#define PREPROCESSOR_DIV_10_5 ~, (2)
+
+#define PREPROCESSOR_DIV_12_2 ~, (6)
+#define PREPROCESSOR_DIV_12_3 ~, (4)
+#define PREPROCESSOR_DIV_12_4 ~, (3)
+#define PREPROCESSOR_DIV_12_6 ~, (2)
+
+#define PREPROCESSOR_DIV_14_2 ~, (7)
+#define PREPROCESSOR_DIV_14_7 ~, (2)
+
+#define PREPROCESSOR_DIV_15_3 ~, (5)
+#define PREPROCESSOR_DIV_15_5 ~, (3)
+
+#define PREPROCESSOR_DIV_16_2 ~, (8)
+#define PREPROCESSOR_DIV_16_4 ~, (4)
+#define PREPROCESSOR_DIV_16_8 ~, (2)
+
+#define PREPROCESSOR_DIV_18_2 ~, (9)
+#define PREPROCESSOR_DIV_18_3 ~, (6)
+#define PREPROCESSOR_DIV_18_6 ~, (3)
+#define PREPROCESSOR_DIV_18_9 ~, (2)
+
+#define PREPROCESSOR_DIV_20_2  ~, (10)
+#define PREPROCESSOR_DIV_20_4  ~, (5)
+#define PREPROCESSOR_DIV_20_5  ~, (4)
+#define PREPROCESSOR_DIV_20_10 ~, (2)
+
+#define PREPROCESSOR_DIV_21_3 ~, (7)
+#define PREPROCESSOR_DIV_21_7 ~, (3)
+
+#define PREPROCESSOR_DIV_22_2  ~, (11)
+#define PREPROCESSOR_DIV_22_11 ~, (2)
+
+#define PREPROCESSOR_DIV_24_2  ~, (12)
+#define PREPROCESSOR_DIV_24_3  ~, (8)
+#define PREPROCESSOR_DIV_24_4  ~, (6)
+#define PREPROCESSOR_DIV_24_6  ~, (4)
+#define PREPROCESSOR_DIV_24_8  ~, (3)
+#define PREPROCESSOR_DIV_24_12 ~, (2)
+
+#define PREPROCESSOR_DIV_25_5 ~, (5)
+
+#define PREPROCESSOR_DIV_26_2  ~, (13)
+#define PREPROCESSOR_DIV_26_13 ~, (2)
+
+#define PREPROCESSOR_DIV_27_3 ~, (9)
+#define PREPROCESSOR_DIV_27_9 ~, (3)
+
+#define PREPROCESSOR_DIV_28_2  ~, (14)
+#define PREPROCESSOR_DIV_28_4  ~, (7)
+#define PREPROCESSOR_DIV_28_7  ~, (4)
+#define PREPROCESSOR_DIV_28_14 ~, (2)
+
+#define PREPROCESSOR_DIV_30_2  ~, (15)
+#define PREPROCESSOR_DIV_30_3  ~, (10)
+#define PREPROCESSOR_DIV_30_5  ~, (6)
+#define PREPROCESSOR_DIV_30_6  ~, (5)
+#define PREPROCESSOR_DIV_30_10 ~, (3)
+#define PREPROCESSOR_DIV_30_15 ~, (2)
+
+#define PREPROCESSOR_DIV_32_2  ~, (16)
+#define PREPROCESSOR_DIV_32_4  ~, (8)
+#define PREPROCESSOR_DIV_32_8  ~, (4)
+#define PREPROCESSOR_DIV_32_16 ~, (2)
+
+#define PREPROCESSOR_DIV_33_3  ~, (11)
+#define PREPROCESSOR_DIV_33_11 ~, (3)
+
+#define PREPROCESSOR_DIV_34_2  ~, (17)
+#define PREPROCESSOR_DIV_34_17 ~, (2)
+
+#define PREPROCESSOR_DIV_35_5 ~, (7)
+#define PREPROCESSOR_DIV_35_7 ~, (5)
+
+#define PREPROCESSOR_DIV_36_2  ~, (18)
+#define PREPROCESSOR_DIV_36_3  ~, (12)
+#define PREPROCESSOR_DIV_36_4  ~, (9)
+#define PREPROCESSOR_DIV_36_6  ~, (6)
+#define PREPROCESSOR_DIV_36_9  ~, (4)
+#define PREPROCESSOR_DIV_36_12 ~, (3)
+#define PREPROCESSOR_DIV_36_18 ~, (2)
+
+#define PREPROCESSOR_DIV_38_2  ~, (19)
+#define PREPROCESSOR_DIV_38_19 ~, (2)
+
+#define PREPROCESSOR_DIV_39_3  ~, (13)
+#define PREPROCESSOR_DIV_39_13 ~, (3)
+
+#define PREPROCESSOR_DIV_40_2  ~, (20)
+#define PREPROCESSOR_DIV_40_4  ~, (10)
+#define PREPROCESSOR_DIV_40_5  ~, (8)
+#define PREPROCESSOR_DIV_40_8  ~, (5)
+#define PREPROCESSOR_DIV_40_10 ~, (4)
+#define PREPROCESSOR_DIV_40_20 ~, (2)
+
+#define PREPROCESSOR_DIV_42_2  ~, (21)
+#define PREPROCESSOR_DIV_42_3  ~, (14)
+#define PREPROCESSOR_DIV_42_6  ~, (7)
+#define PREPROCESSOR_DIV_42_7  ~, (6)
+#define PREPROCESSOR_DIV_42_14 ~, (3)
+#define PREPROCESSOR_DIV_42_21 ~, (2)
+
+#define PREPROCESSOR_DIV_44_2  ~, (22)
+#define PREPROCESSOR_DIV_44_4  ~, (11)
+#define PREPROCESSOR_DIV_44_11 ~, (4)
+#define PREPROCESSOR_DIV_44_22 ~, (2)
+
+#define PREPROCESSOR_DIV_45_3  ~, (15)
+#define PREPROCESSOR_DIV_45_5  ~, (9)
+#define PREPROCESSOR_DIV_45_9  ~, (5)
+#define PREPROCESSOR_DIV_45_15 ~, (3)
+
+#define PREPROCESSOR_DIV_46_2  ~, (23)
+#define PREPROCESSOR_DIV_46_23 ~, (2)
+
+#define PREPROCESSOR_DIV_48_2  ~, (24)
+#define PREPROCESSOR_DIV_48_3  ~, (16)
+#define PREPROCESSOR_DIV_48_4  ~, (12)
+#define PREPROCESSOR_DIV_48_6  ~, (8)
+#define PREPROCESSOR_DIV_48_8  ~, (6)
+#define PREPROCESSOR_DIV_48_12 ~, (4)
+#define PREPROCESSOR_DIV_48_16 ~, (3)
+#define PREPROCESSOR_DIV_48_24 ~, (2)
+
+#define PREPROCESSOR_DIV_49_7 ~, (7)
+
+#define PREPROCESSOR_DIV_50_2  ~, (25)
+#define PREPROCESSOR_DIV_50_5  ~, (10)
+#define PREPROCESSOR_DIV_50_10 ~, (5)
+#define PREPROCESSOR_DIV_50_25 ~, (2)
+
+#define PREPROCESSOR_DIV_51_3  ~, (17)
+#define PREPROCESSOR_DIV_51_17 ~, (3)
+
+#define PREPROCESSOR_DIV_52_2  ~, (26)
+#define PREPROCESSOR_DIV_52_4  ~, (13)
+#define PREPROCESSOR_DIV_52_13 ~, (4)
+#define PREPROCESSOR_DIV_52_26 ~, (2)
+
+#define PREPROCESSOR_DIV_54_2  ~, (27)
+#define PREPROCESSOR_DIV_54_3  ~, (18)
+#define PREPROCESSOR_DIV_54_6  ~, (9)
+#define PREPROCESSOR_DIV_54_9  ~, (6)
+#define PREPROCESSOR_DIV_54_18 ~, (3)
+#define PREPROCESSOR_DIV_54_27 ~, (2)
+
+#define PREPROCESSOR_DIV_55_5  ~, (11)
+#define PREPROCESSOR_DIV_55_11 ~, (5)
+
+#define PREPROCESSOR_DIV_56_2  ~, (28)
+#define PREPROCESSOR_DIV_56_4  ~, (14)
+#define PREPROCESSOR_DIV_56_7  ~, (8)
+#define PREPROCESSOR_DIV_56_8  ~, (7)
+#define PREPROCESSOR_DIV_56_14 ~, (4)
+#define PREPROCESSOR_DIV_56_28 ~, (2)
+
+#define PREPROCESSOR_DIV_57_3  ~, (19)
+#define PREPROCESSOR_DIV_57_19 ~, (3)
+
+#define PREPROCESSOR_DIV_58_2  ~, (29)
+#define PREPROCESSOR_DIV_58_29 ~, (2)
+
+#define PREPROCESSOR_DIV_60_2  ~, (30)
+#define PREPROCESSOR_DIV_60_3  ~, (20)
+#define PREPROCESSOR_DIV_60_4  ~, (15)
+#define PREPROCESSOR_DIV_60_5  ~, (12)
+#define PREPROCESSOR_DIV_60_6  ~, (10)
+#define PREPROCESSOR_DIV_60_10 ~, (6)
+#define PREPROCESSOR_DIV_60_12 ~, (5)
+#define PREPROCESSOR_DIV_60_15 ~, (4)
+#define PREPROCESSOR_DIV_60_20 ~, (3)
+#define PREPROCESSOR_DIV_60_30 ~, (2)
+
+#define PREPROCESSOR_DIV_62_2  ~, (31)
+#define PREPROCESSOR_DIV_62_31 ~, (2)
+
+#define PREPROCESSOR_DIV_63_3  ~, (21)
+#define PREPROCESSOR_DIV_63_7  ~, (9)
+#define PREPROCESSOR_DIV_63_9  ~, (7)
+#define PREPROCESSOR_DIV_63_21 ~, (3)
+
+#define PREPROCESSOR_DIV_64_2  ~, (32)
+#define PREPROCESSOR_DIV_64_4  ~, (16)
+#define PREPROCESSOR_DIV_64_8  ~, (8)
+#define PREPROCESSOR_DIV_64_16 ~, (4)
+#define PREPROCESSOR_DIV_64_32 ~, (2)
+
+#define PREPROCESSOR_DIV_65_5  ~, (13)
+#define PREPROCESSOR_DIV_65_13 ~, (5)
+
+#define PREPROCESSOR_DIV_66_2  ~, (33)
+#define PREPROCESSOR_DIV_66_3  ~, (22)
+#define PREPROCESSOR_DIV_66_6  ~, (11)
+#define PREPROCESSOR_DIV_66_11 ~, (6)
+#define PREPROCESSOR_DIV_66_22 ~, (3)
+#define PREPROCESSOR_DIV_66_33 ~, (2)
+
+#define PREPROCESSOR_DIV_68_2  ~, (34)
+#define PREPROCESSOR_DIV_68_4  ~, (17)
+#define PREPROCESSOR_DIV_68_17 ~, (4)
+#define PREPROCESSOR_DIV_68_34 ~, (2)
+
+#define PREPROCESSOR_DIV_69_3  ~, (23)
+#define PREPROCESSOR_DIV_69_23 ~, (3)
+
+#define PREPROCESSOR_DIV_70_2  ~, (35)
+#define PREPROCESSOR_DIV_70_5  ~, (14)
+#define PREPROCESSOR_DIV_70_7  ~, (10)
+#define PREPROCESSOR_DIV_70_10 ~, (7)
+#define PREPROCESSOR_DIV_70_14 ~, (5)
+#define PREPROCESSOR_DIV_70_35 ~, (2)
+
+#define PREPROCESSOR_DIV_72_2  ~, (36)
+#define PREPROCESSOR_DIV_72_3  ~, (24)
+#define PREPROCESSOR_DIV_72_4  ~, (18)
+#define PREPROCESSOR_DIV_72_6  ~, (12)
+#define PREPROCESSOR_DIV_72_8  ~, (9)
+#define PREPROCESSOR_DIV_72_9  ~, (8)
+#define PREPROCESSOR_DIV_72_12 ~, (6)
+#define PREPROCESSOR_DIV_72_18 ~, (4)
+#define PREPROCESSOR_DIV_72_24 ~, (3)
+#define PREPROCESSOR_DIV_72_36 ~, (2)
+
+#define PREPROCESSOR_DIV_74_2  ~, (37)
+#define PREPROCESSOR_DIV_74_37 ~, (2)
+
+#define PREPROCESSOR_DIV_75_3  ~, (25)
+#define PREPROCESSOR_DIV_75_5  ~, (15)
+#define PREPROCESSOR_DIV_75_15 ~, (5)
+#define PREPROCESSOR_DIV_75_25 ~, (3)
+
+#define PREPROCESSOR_DIV_76_2  ~, (38)
+#define PREPROCESSOR_DIV_76_4  ~, (19)
+#define PREPROCESSOR_DIV_76_19 ~, (4)
+#define PREPROCESSOR_DIV_76_38 ~, (2)
+
+#define PREPROCESSOR_DIV_77_7  ~, (11)
+#define PREPROCESSOR_DIV_77_11 ~, (7)
+
+#define PREPROCESSOR_DIV_78_2  ~, (39)
+#define PREPROCESSOR_DIV_78_3  ~, (26)
+#define PREPROCESSOR_DIV_78_6  ~, (13)
+#define PREPROCESSOR_DIV_78_13 ~, (6)
+#define PREPROCESSOR_DIV_78_26 ~, (3)
+#define PREPROCESSOR_DIV_78_39 ~, (2)
+
+#define PREPROCESSOR_DIV_80_2  ~, (40)
+#define PREPROCESSOR_DIV_80_4  ~, (20)
+#define PREPROCESSOR_DIV_80_5  ~, (16)
+#define PREPROCESSOR_DIV_80_8  ~, (10)
+#define PREPROCESSOR_DIV_80_10 ~, (8)
+#define PREPROCESSOR_DIV_80_16 ~, (5)
+#define PREPROCESSOR_DIV_80_20 ~, (4)
+#define PREPROCESSOR_DIV_80_40 ~, (2)
+
+#define PREPROCESSOR_DIV_81_3  ~, (27)
+#define PREPROCESSOR_DIV_81_9  ~, (9)
+#define PREPROCESSOR_DIV_81_27 ~, (3)
+
+#define PREPROCESSOR_DIV_82_2  ~, (41)
+#define PREPROCESSOR_DIV_82_41 ~, (2)
+
+#define PREPROCESSOR_DIV_84_2  ~, (42)
+#define PREPROCESSOR_DIV_84_3  ~, (28)
+#define PREPROCESSOR_DIV_84_4  ~, (21)
+#define PREPROCESSOR_DIV_84_6  ~, (14)
+#define PREPROCESSOR_DIV_84_7  ~, (12)
+#define PREPROCESSOR_DIV_84_12 ~, (7)
+#define PREPROCESSOR_DIV_84_14 ~, (6)
+#define PREPROCESSOR_DIV_84_21 ~, (4)
+#define PREPROCESSOR_DIV_84_28 ~, (3)
+#define PREPROCESSOR_DIV_84_42 ~, (2)
+
+#define PREPROCESSOR_DIV_85_5  ~, (17)
+#define PREPROCESSOR_DIV_85_17 ~, (5)
+
+#define PREPROCESSOR_DIV_86_2  ~, (43)
+#define PREPROCESSOR_DIV_86_43 ~, (2)
+
+#define PREPROCESSOR_DIV_87_3  ~, (29)
+#define PREPROCESSOR_DIV_87_29 ~, (3)
+
+#define PREPROCESSOR_DIV_88_2  ~, (44)
+#define PREPROCESSOR_DIV_88_4  ~, (22)
+#define PREPROCESSOR_DIV_88_8  ~, (11)
+#define PREPROCESSOR_DIV_88_11 ~, (8)
+#define PREPROCESSOR_DIV_88_22 ~, (4)
+#define PREPROCESSOR_DIV_88_44 ~, (2)
+
+#define PREPROCESSOR_DIV_90_2  ~, (45)
+#define PREPROCESSOR_DIV_90_3  ~, (30)
+#define PREPROCESSOR_DIV_90_5  ~, (18)
+#define PREPROCESSOR_DIV_90_6  ~, (15)
+#define PREPROCESSOR_DIV_90_9  ~, (10)
+#define PREPROCESSOR_DIV_90_10 ~, (9)
+#define PREPROCESSOR_DIV_90_15 ~, (6)
+#define PREPROCESSOR_DIV_90_18 ~, (5)
+#define PREPROCESSOR_DIV_90_30 ~, (3)
+#define PREPROCESSOR_DIV_90_45 ~, (2)
+
+#define PREPROCESSOR_DIV_91_7  ~, (13)
+#define PREPROCESSOR_DIV_91_13 ~, (7)
+
+#define PREPROCESSOR_DIV_92_2  ~, (46)
+#define PREPROCESSOR_DIV_92_4  ~, (23)
+#define PREPROCESSOR_DIV_92_23 ~, (4)
+#define PREPROCESSOR_DIV_92_46 ~, (2)
+
+#define PREPROCESSOR_DIV_93_3  ~, (31)
+#define PREPROCESSOR_DIV_93_31 ~, (3)
+
+#define PREPROCESSOR_DIV_94_2  ~, (47)
+#define PREPROCESSOR_DIV_94_47 ~, (2)
+
+#define PREPROCESSOR_DIV_95_5  ~, (19)
+#define PREPROCESSOR_DIV_95_19 ~, (5)
+
+#define PREPROCESSOR_DIV_96_2  ~, (48)
+#define PREPROCESSOR_DIV_96_3  ~, (32)
+#define PREPROCESSOR_DIV_96_4  ~, (24)
+#define PREPROCESSOR_DIV_96_6  ~, (16)
+#define PREPROCESSOR_DIV_96_8  ~, (12)
+#define PREPROCESSOR_DIV_96_12 ~, (8)
+#define PREPROCESSOR_DIV_96_16 ~, (6)
+#define PREPROCESSOR_DIV_96_24 ~, (4)
+#define PREPROCESSOR_DIV_96_32 ~, (3)
+#define PREPROCESSOR_DIV_96_48 ~, (2)
+
+#define PREPROCESSOR_DIV_98_2  ~, (49)
+#define PREPROCESSOR_DIV_98_7  ~, (14)
+#define PREPROCESSOR_DIV_98_14 ~, (7)
+#define PREPROCESSOR_DIV_98_49 ~, (2)
+
+#define PREPROCESSOR_DIV_99_3  ~, (33)
+#define PREPROCESSOR_DIV_99_9  ~, (11)
+#define PREPROCESSOR_DIV_99_11 ~, (9)
+#define PREPROCESSOR_DIV_99_33 ~, (3)
+
+#define PREPROCESSOR_DIV_100_2  ~, (50)
+#define PREPROCESSOR_DIV_100_4  ~, (25)
+#define PREPROCESSOR_DIV_100_5  ~, (20)
+#define PREPROCESSOR_DIV_100_10 ~, (10)
+#define PREPROCESSOR_DIV_100_20 ~, (5)
+#define PREPROCESSOR_DIV_100_25 ~, (4)
+#define PREPROCESSOR_DIV_100_50 ~, (2)
+
+#define PREPROCESSOR_DIV_102_2  ~, (51)
+#define PREPROCESSOR_DIV_102_3  ~, (34)
+#define PREPROCESSOR_DIV_102_6  ~, (17)
+#define PREPROCESSOR_DIV_102_17 ~, (6)
+#define PREPROCESSOR_DIV_102_34 ~, (3)
+#define PREPROCESSOR_DIV_102_51 ~, (2)
+
+#define PREPROCESSOR_DIV_104_2  ~, (52)
+#define PREPROCESSOR_DIV_104_4  ~, (26)
+#define PREPROCESSOR_DIV_104_8  ~, (13)
+#define PREPROCESSOR_DIV_104_13 ~, (8)
+#define PREPROCESSOR_DIV_104_26 ~, (4)
+#define PREPROCESSOR_DIV_104_52 ~, (2)
+
+#define PREPROCESSOR_DIV_105_3  ~, (35)
+#define PREPROCESSOR_DIV_105_5  ~, (21)
+#define PREPROCESSOR_DIV_105_7  ~, (15)
+#define PREPROCESSOR_DIV_105_15 ~, (7)
+#define PREPROCESSOR_DIV_105_21 ~, (5)
+#define PREPROCESSOR_DIV_105_35 ~, (3)
+
+#define PREPROCESSOR_DIV_106_2  ~, (53)
+#define PREPROCESSOR_DIV_106_53 ~, (2)
+
+#define PREPROCESSOR_DIV_108_2  ~, (54)
+#define PREPROCESSOR_DIV_108_3  ~, (36)
+#define PREPROCESSOR_DIV_108_4  ~, (27)
+#define PREPROCESSOR_DIV_108_6  ~, (18)
+#define PREPROCESSOR_DIV_108_9  ~, (12)
+#define PREPROCESSOR_DIV_108_12 ~, (9)
+#define PREPROCESSOR_DIV_108_18 ~, (6)
+#define PREPROCESSOR_DIV_108_27 ~, (4)
+#define PREPROCESSOR_DIV_108_36 ~, (3)
+#define PREPROCESSOR_DIV_108_54 ~, (2)
+
+#define PREPROCESSOR_DIV_110_2  ~, (55)
+#define PREPROCESSOR_DIV_110_5  ~, (22)
+#define PREPROCESSOR_DIV_110_10 ~, (11)
+#define PREPROCESSOR_DIV_110_11 ~, (10)
+#define PREPROCESSOR_DIV_110_22 ~, (5)
+#define PREPROCESSOR_DIV_110_55 ~, (2)
+
+#define PREPROCESSOR_DIV_111_3  ~, (37)
+#define PREPROCESSOR_DIV_111_37 ~, (3)
+
+#define PREPROCESSOR_DIV_112_2  ~, (56)
+#define PREPROCESSOR_DIV_112_4  ~, (28)
+#define PREPROCESSOR_DIV_112_7  ~, (16)
+#define PREPROCESSOR_DIV_112_8  ~, (14)
+#define PREPROCESSOR_DIV_112_14 ~, (8)
+#define PREPROCESSOR_DIV_112_16 ~, (7)
+#define PREPROCESSOR_DIV_112_28 ~, (4)
+#define PREPROCESSOR_DIV_112_56 ~, (2)
+
+#define PREPROCESSOR_DIV_114_2  ~, (57)
+#define PREPROCESSOR_DIV_114_3  ~, (38)
+#define PREPROCESSOR_DIV_114_6  ~, (19)
+#define PREPROCESSOR_DIV_114_19 ~, (6)
+#define PREPROCESSOR_DIV_114_38 ~, (3)
+#define PREPROCESSOR_DIV_114_57 ~, (2)
+
+#define PREPROCESSOR_DIV_115_5  ~, (23)
+#define PREPROCESSOR_DIV_115_23 ~, (5)
+
+#define PREPROCESSOR_DIV_116_2  ~, (58)
+#define PREPROCESSOR_DIV_116_4  ~, (29)
+#define PREPROCESSOR_DIV_116_29 ~, (4)
+#define PREPROCESSOR_DIV_116_58 ~, (2)
+
+#define PREPROCESSOR_DIV_117_3  ~, (39)
+#define PREPROCESSOR_DIV_117_9  ~, (13)
+#define PREPROCESSOR_DIV_117_13 ~, (9)
+#define PREPROCESSOR_DIV_117_39 ~, (3)
+
+#define PREPROCESSOR_DIV_118_2  ~, (59)
+#define PREPROCESSOR_DIV_118_59 ~, (2)
+
+#define PREPROCESSOR_DIV_119_7  ~, (17)
+#define PREPROCESSOR_DIV_119_17 ~, (7)
+
+#define PREPROCESSOR_DIV_120_2  ~, (60)
+#define PREPROCESSOR_DIV_120_3  ~, (40)
+#define PREPROCESSOR_DIV_120_4  ~, (30)
+#define PREPROCESSOR_DIV_120_5  ~, (24)
+#define PREPROCESSOR_DIV_120_6  ~, (20)
+#define PREPROCESSOR_DIV_120_8  ~, (15)
+#define PREPROCESSOR_DIV_120_10 ~, (12)
+#define PREPROCESSOR_DIV_120_12 ~, (10)
+#define PREPROCESSOR_DIV_120_15 ~, (8)
+#define PREPROCESSOR_DIV_120_20 ~, (6)
+#define PREPROCESSOR_DIV_120_24 ~, (5)
+#define PREPROCESSOR_DIV_120_30 ~, (4)
+#define PREPROCESSOR_DIV_120_40 ~, (3)
+#define PREPROCESSOR_DIV_120_60 ~, (2)
+
+#define PREPROCESSOR_DIV_121_11 ~, (11)
+
+#define PREPROCESSOR_DIV_122_2  ~, (61)
+#define PREPROCESSOR_DIV_122_61 ~, (2)
+
+#define PREPROCESSOR_DIV_123_3  ~, (41)
+#define PREPROCESSOR_DIV_123_41 ~, (3)
+
+#define PREPROCESSOR_DIV_124_2  ~, (62)
+#define PREPROCESSOR_DIV_124_4  ~, (31)
+#define PREPROCESSOR_DIV_124_31 ~, (4)
+#define PREPROCESSOR_DIV_124_62 ~, (2)
+
+#define PREPROCESSOR_DIV_125_5  ~, (25)
+#define PREPROCESSOR_DIV_125_25 ~, (5)
+
+#define PREPROCESSOR_DIV_126_2  ~, (63)
+#define PREPROCESSOR_DIV_126_3  ~, (42)
+#define PREPROCESSOR_DIV_126_6  ~, (21)
+#define PREPROCESSOR_DIV_126_7  ~, (18)
+#define PREPROCESSOR_DIV_126_9  ~, (14)
+#define PREPROCESSOR_DIV_126_14 ~, (9)
+#define PREPROCESSOR_DIV_126_18 ~, (7)
+#define PREPROCESSOR_DIV_126_21 ~, (6)
+#define PREPROCESSOR_DIV_126_42 ~, (3)
+#define PREPROCESSOR_DIV_126_63 ~, (2)
+
+#define PREPROCESSOR_DIV_128_2  ~, (64)
+#define PREPROCESSOR_DIV_128_4  ~, (32)
+#define PREPROCESSOR_DIV_128_8  ~, (16)
+#define PREPROCESSOR_DIV_128_16 ~, (8)
+#define PREPROCESSOR_DIV_128_32 ~, (4)
+#define PREPROCESSOR_DIV_128_64 ~, (2)
+
+#define PREPROCESSOR_DIV_129_3  ~, (43)
+#define PREPROCESSOR_DIV_129_43 ~, (3)
+
+#define PREPROCESSOR_DIV_130_2  ~, (65)
+#define PREPROCESSOR_DIV_130_5  ~, (26)
+#define PREPROCESSOR_DIV_130_10 ~, (13)
+#define PREPROCESSOR_DIV_130_13 ~, (10)
+#define PREPROCESSOR_DIV_130_26 ~, (5)
+#define PREPROCESSOR_DIV_130_65 ~, (2)
+
+#define PREPROCESSOR_DIV_132_2  ~, (66)
+#define PREPROCESSOR_DIV_132_3  ~, (44)
+#define PREPROCESSOR_DIV_132_4  ~, (33)
+#define PREPROCESSOR_DIV_132_6  ~, (22)
+#define PREPROCESSOR_DIV_132_11 ~, (12)
+#define PREPROCESSOR_DIV_132_12 ~, (11)
+#define PREPROCESSOR_DIV_132_22 ~, (6)
+#define PREPROCESSOR_DIV_132_33 ~, (4)
+#define PREPROCESSOR_DIV_132_44 ~, (3)
+#define PREPROCESSOR_DIV_132_66 ~, (2)
+
+#define PREPROCESSOR_DIV_133_7  ~, (19)
+#define PREPROCESSOR_DIV_133_19 ~, (7)
+
+#define PREPROCESSOR_DIV_134_2  ~, (67)
+#define PREPROCESSOR_DIV_134_67 ~, (2)
+
+#define PREPROCESSOR_DIV_135_3  ~, (45)
+#define PREPROCESSOR_DIV_135_5  ~, (27)
+#define PREPROCESSOR_DIV_135_9  ~, (15)
+#define PREPROCESSOR_DIV_135_15 ~, (9)
+#define PREPROCESSOR_DIV_135_27 ~, (5)
+#define PREPROCESSOR_DIV_135_45 ~, (3)
+
+#define PREPROCESSOR_DIV_136_2  ~, (68)
+#define PREPROCESSOR_DIV_136_4  ~, (34)
+#define PREPROCESSOR_DIV_136_8  ~, (17)
+#define PREPROCESSOR_DIV_136_17 ~, (8)
+#define PREPROCESSOR_DIV_136_34 ~, (4)
+#define PREPROCESSOR_DIV_136_68 ~, (2)
+
+#define PREPROCESSOR_DIV_138_2  ~, (69)
+#define PREPROCESSOR_DIV_138_3  ~, (46)
+#define PREPROCESSOR_DIV_138_6  ~, (23)
+#define PREPROCESSOR_DIV_138_23 ~, (6)
+#define PREPROCESSOR_DIV_138_46 ~, (3)
+#define PREPROCESSOR_DIV_138_69 ~, (2)
+
+#define PREPROCESSOR_DIV_140_2  ~, (70)
+#define PREPROCESSOR_DIV_140_4  ~, (35)
+#define PREPROCESSOR_DIV_140_5  ~, (28)
+#define PREPROCESSOR_DIV_140_7  ~, (20)
+#define PREPROCESSOR_DIV_140_10 ~, (14)
+#define PREPROCESSOR_DIV_140_14 ~, (10)
+#define PREPROCESSOR_DIV_140_20 ~, (7)
+#define PREPROCESSOR_DIV_140_28 ~, (5)
+#define PREPROCESSOR_DIV_140_35 ~, (4)
+#define PREPROCESSOR_DIV_140_70 ~, (2)
+
+#define PREPROCESSOR_DIV_141_3  ~, (47)
+#define PREPROCESSOR_DIV_141_47 ~, (3)
+
+#define PREPROCESSOR_DIV_142_2  ~, (71)
+#define PREPROCESSOR_DIV_142_71 ~, (2)
+
+#define PREPROCESSOR_DIV_143_11 ~, (13)
+#define PREPROCESSOR_DIV_143_13 ~, (11)
+
+#define PREPROCESSOR_DIV_144_2  ~, (72)
+#define PREPROCESSOR_DIV_144_3  ~, (48)
+#define PREPROCESSOR_DIV_144_4  ~, (36)
+#define PREPROCESSOR_DIV_144_6  ~, (24)
+#define PREPROCESSOR_DIV_144_8  ~, (18)
+#define PREPROCESSOR_DIV_144_9  ~, (16)
+#define PREPROCESSOR_DIV_144_12 ~, (12)
+#define PREPROCESSOR_DIV_144_16 ~, (9)
+#define PREPROCESSOR_DIV_144_18 ~, (8)
+#define PREPROCESSOR_DIV_144_24 ~, (6)
+#define PREPROCESSOR_DIV_144_36 ~, (4)
+#define PREPROCESSOR_DIV_144_48 ~, (3)
+#define PREPROCESSOR_DIV_144_72 ~, (2)
+
+#define PREPROCESSOR_DIV_145_5  ~, (29)
+#define PREPROCESSOR_DIV_145_29 ~, (5)
+
+#define PREPROCESSOR_DIV_146_2  ~, (73)
+#define PREPROCESSOR_DIV_146_73 ~, (2)
+
+#define PREPROCESSOR_DIV_147_3  ~, (49)
+#define PREPROCESSOR_DIV_147_7  ~, (21)
+#define PREPROCESSOR_DIV_147_21 ~, (7)
+#define PREPROCESSOR_DIV_147_49 ~, (3)
+
+#define PREPROCESSOR_DIV_148_2  ~, (74)
+#define PREPROCESSOR_DIV_148_4  ~, (37)
+#define PREPROCESSOR_DIV_148_37 ~, (4)
+#define PREPROCESSOR_DIV_148_74 ~, (2)
+
+#define PREPROCESSOR_DIV_150_2  ~, (75)
+#define PREPROCESSOR_DIV_150_3  ~, (50)
+#define PREPROCESSOR_DIV_150_5  ~, (30)
+#define PREPROCESSOR_DIV_150_6  ~, (25)
+#define PREPROCESSOR_DIV_150_10 ~, (15)
+#define PREPROCESSOR_DIV_150_15 ~, (10)
+#define PREPROCESSOR_DIV_150_25 ~, (6)
+#define PREPROCESSOR_DIV_150_30 ~, (5)
+#define PREPROCESSOR_DIV_150_50 ~, (3)
+#define PREPROCESSOR_DIV_150_75 ~, (2)
+
+#define PREPROCESSOR_DIV_152_2  ~, (76)
+#define PREPROCESSOR_DIV_152_4  ~, (38)
+#define PREPROCESSOR_DIV_152_8  ~, (19)
+#define PREPROCESSOR_DIV_152_19 ~, (8)
+#define PREPROCESSOR_DIV_152_38 ~, (4)
+#define PREPROCESSOR_DIV_152_76 ~, (2)
+
+#define PREPROCESSOR_DIV_153_3  ~, (51)
+#define PREPROCESSOR_DIV_153_9  ~, (17)
+#define PREPROCESSOR_DIV_153_17 ~, (9)
+#define PREPROCESSOR_DIV_153_51 ~, (3)
+
+#define PREPROCESSOR_DIV_154_2  ~, (77)
+#define PREPROCESSOR_DIV_154_7  ~, (22)
+#define PREPROCESSOR_DIV_154_11 ~, (14)
+#define PREPROCESSOR_DIV_154_14 ~, (11)
+#define PREPROCESSOR_DIV_154_22 ~, (7)
+#define PREPROCESSOR_DIV_154_77 ~, (2)
+
+#define PREPROCESSOR_DIV_155_5  ~, (31)
+#define PREPROCESSOR_DIV_155_31 ~, (5)
+
+#define PREPROCESSOR_DIV_156_2  ~, (78)
+#define PREPROCESSOR_DIV_156_3  ~, (52)
+#define PREPROCESSOR_DIV_156_4  ~, (39)
+#define PREPROCESSOR_DIV_156_6  ~, (26)
+#define PREPROCESSOR_DIV_156_12 ~, (13)
+#define PREPROCESSOR_DIV_156_13 ~, (12)
+#define PREPROCESSOR_DIV_156_26 ~, (6)
+#define PREPROCESSOR_DIV_156_39 ~, (4)
+#define PREPROCESSOR_DIV_156_52 ~, (3)
+#define PREPROCESSOR_DIV_156_78 ~, (2)
+
+#define PREPROCESSOR_DIV_158_2  ~, (79)
+#define PREPROCESSOR_DIV_158_79 ~, (2)
+
+#define PREPROCESSOR_DIV_159_3  ~, (53)
+#define PREPROCESSOR_DIV_159_53 ~, (3)
+
+#define PREPROCESSOR_DIV_160_2  ~, (80)
+#define PREPROCESSOR_DIV_160_4  ~, (40)
+#define PREPROCESSOR_DIV_160_5  ~, (32)
+#define PREPROCESSOR_DIV_160_8  ~, (20)
+#define PREPROCESSOR_DIV_160_10 ~, (16)
+#define PREPROCESSOR_DIV_160_16 ~, (10)
+#define PREPROCESSOR_DIV_160_20 ~, (8)
+#define PREPROCESSOR_DIV_160_32 ~, (5)
+#define PREPROCESSOR_DIV_160_40 ~, (4)
+#define PREPROCESSOR_DIV_160_80 ~, (2)
+
+#define PREPROCESSOR_DIV_161_7  ~, (23)
+#define PREPROCESSOR_DIV_161_23 ~, (7)
+
+#define PREPROCESSOR_DIV_162_2  ~, (81)
+#define PREPROCESSOR_DIV_162_3  ~, (54)
+#define PREPROCESSOR_DIV_162_6  ~, (27)
+#define PREPROCESSOR_DIV_162_9  ~, (18)
+#define PREPROCESSOR_DIV_162_18 ~, (9)
+#define PREPROCESSOR_DIV_162_27 ~, (6)
+#define PREPROCESSOR_DIV_162_54 ~, (3)
+#define PREPROCESSOR_DIV_162_81 ~, (2)
+
+#define PREPROCESSOR_DIV_164_2  ~, (82)
+#define PREPROCESSOR_DIV_164_4  ~, (41)
+#define PREPROCESSOR_DIV_164_41 ~, (4)
+#define PREPROCESSOR_DIV_164_82 ~, (2)
+
+#define PREPROCESSOR_DIV_165_3  ~, (55)
+#define PREPROCESSOR_DIV_165_5  ~, (33)
+#define PREPROCESSOR_DIV_165_11 ~, (15)
+#define PREPROCESSOR_DIV_165_15 ~, (11)
+#define PREPROCESSOR_DIV_165_33 ~, (5)
+#define PREPROCESSOR_DIV_165_55 ~, (3)
+
+#define PREPROCESSOR_DIV_166_2  ~, (83)
+#define PREPROCESSOR_DIV_166_83 ~, (2)
+
+#define PREPROCESSOR_DIV_168_2  ~, (84)
+#define PREPROCESSOR_DIV_168_3  ~, (56)
+#define PREPROCESSOR_DIV_168_4  ~, (42)
+#define PREPROCESSOR_DIV_168_6  ~, (28)
+#define PREPROCESSOR_DIV_168_7  ~, (24)
+#define PREPROCESSOR_DIV_168_8  ~, (21)
+#define PREPROCESSOR_DIV_168_12 ~, (14)
+#define PREPROCESSOR_DIV_168_14 ~, (12)
+#define PREPROCESSOR_DIV_168_21 ~, (8)
+#define PREPROCESSOR_DIV_168_24 ~, (7)
+#define PREPROCESSOR_DIV_168_28 ~, (6)
+#define PREPROCESSOR_DIV_168_42 ~, (4)
+#define PREPROCESSOR_DIV_168_56 ~, (3)
+#define PREPROCESSOR_DIV_168_84 ~, (2)
+
+#define PREPROCESSOR_DIV_169_13 ~, (13)
+
+#define PREPROCESSOR_DIV_170_2  ~, (85)
+#define PREPROCESSOR_DIV_170_5  ~, (34)
+#define PREPROCESSOR_DIV_170_10 ~, (17)
+#define PREPROCESSOR_DIV_170_17 ~, (10)
+#define PREPROCESSOR_DIV_170_34 ~, (5)
+#define PREPROCESSOR_DIV_170_85 ~, (2)
+
+#define PREPROCESSOR_DIV_171_3  ~, (57)
+#define PREPROCESSOR_DIV_171_9  ~, (19)
+#define PREPROCESSOR_DIV_171_19 ~, (9)
+#define PREPROCESSOR_DIV_171_57 ~, (3)
+
+#define PREPROCESSOR_DIV_172_2  ~, (86)
+#define PREPROCESSOR_DIV_172_4  ~, (43)
+#define PREPROCESSOR_DIV_172_43 ~, (4)
+#define PREPROCESSOR_DIV_172_86 ~, (2)
+
+#define PREPROCESSOR_DIV_174_2  ~, (87)
+#define PREPROCESSOR_DIV_174_3  ~, (58)
+#define PREPROCESSOR_DIV_174_6  ~, (29)
+#define PREPROCESSOR_DIV_174_29 ~, (6)
+#define PREPROCESSOR_DIV_174_58 ~, (3)
+#define PREPROCESSOR_DIV_174_87 ~, (2)
+
+#define PREPROCESSOR_DIV_175_5  ~, (35)
+#define PREPROCESSOR_DIV_175_7  ~, (25)
+#define PREPROCESSOR_DIV_175_25 ~, (7)
+#define PREPROCESSOR_DIV_175_35 ~, (5)
+
+#define PREPROCESSOR_DIV_176_2  ~, (88)
+#define PREPROCESSOR_DIV_176_4  ~, (44)
+#define PREPROCESSOR_DIV_176_8  ~, (22)
+#define PREPROCESSOR_DIV_176_11 ~, (16)
+#define PREPROCESSOR_DIV_176_16 ~, (11)
+#define PREPROCESSOR_DIV_176_22 ~, (8)
+#define PREPROCESSOR_DIV_176_44 ~, (4)
+#define PREPROCESSOR_DIV_176_88 ~, (2)
+
+#define PREPROCESSOR_DIV_177_3  ~, (59)
+#define PREPROCESSOR_DIV_177_59 ~, (3)
+
+#define PREPROCESSOR_DIV_178_2  ~, (89)
+#define PREPROCESSOR_DIV_178_89 ~, (2)
+
+#define PREPROCESSOR_DIV_180_2  ~, (90)
+#define PREPROCESSOR_DIV_180_3  ~, (60)
+#define PREPROCESSOR_DIV_180_4  ~, (45)
+#define PREPROCESSOR_DIV_180_5  ~, (36)
+#define PREPROCESSOR_DIV_180_6  ~, (30)
+#define PREPROCESSOR_DIV_180_9  ~, (20)
+#define PREPROCESSOR_DIV_180_10 ~, (18)
+#define PREPROCESSOR_DIV_180_12 ~, (15)
+#define PREPROCESSOR_DIV_180_15 ~, (12)
+#define PREPROCESSOR_DIV_180_18 ~, (10)
+#define PREPROCESSOR_DIV_180_20 ~, (9)
+#define PREPROCESSOR_DIV_180_30 ~, (6)
+#define PREPROCESSOR_DIV_180_36 ~, (5)
+#define PREPROCESSOR_DIV_180_45 ~, (4)
+#define PREPROCESSOR_DIV_180_60 ~, (3)
+#define PREPROCESSOR_DIV_180_90 ~, (2)
+
+#define PREPROCESSOR_DIV_182_2  ~, (91)
+#define PREPROCESSOR_DIV_182_7  ~, (26)
+#define PREPROCESSOR_DIV_182_13 ~, (14)
+#define PREPROCESSOR_DIV_182_14 ~, (13)
+#define PREPROCESSOR_DIV_182_26 ~, (7)
+#define PREPROCESSOR_DIV_182_91 ~, (2)
+
+#define PREPROCESSOR_DIV_183_3  ~, (61)
+#define PREPROCESSOR_DIV_183_61 ~, (3)
+
+#define PREPROCESSOR_DIV_184_2  ~, (92)
+#define PREPROCESSOR_DIV_184_4  ~, (46)
+#define PREPROCESSOR_DIV_184_8  ~, (23)
+#define PREPROCESSOR_DIV_184_23 ~, (8)
+#define PREPROCESSOR_DIV_184_46 ~, (4)
+#define PREPROCESSOR_DIV_184_92 ~, (2)
+
+#define PREPROCESSOR_DIV_185_5  ~, (37)
+#define PREPROCESSOR_DIV_185_37 ~, (5)
+
+#define PREPROCESSOR_DIV_186_2  ~, (93)
+#define PREPROCESSOR_DIV_186_3  ~, (62)
+#define PREPROCESSOR_DIV_186_6  ~, (31)
+#define PREPROCESSOR_DIV_186_31 ~, (6)
+#define PREPROCESSOR_DIV_186_62 ~, (3)
+#define PREPROCESSOR_DIV_186_93 ~, (2)
+
+#define PREPROCESSOR_DIV_187_11 ~, (17)
+#define PREPROCESSOR_DIV_187_17 ~, (11)
+
+#define PREPROCESSOR_DIV_188_2  ~, (94)
+#define PREPROCESSOR_DIV_188_4  ~, (47)
+#define PREPROCESSOR_DIV_188_47 ~, (4)
+#define PREPROCESSOR_DIV_188_94 ~, (2)
+
+#define PREPROCESSOR_DIV_189_3  ~, (63)
+#define PREPROCESSOR_DIV_189_7  ~, (27)
+#define PREPROCESSOR_DIV_189_9  ~, (21)
+#define PREPROCESSOR_DIV_189_21 ~, (9)
+#define PREPROCESSOR_DIV_189_27 ~, (7)
+#define PREPROCESSOR_DIV_189_63 ~, (3)
+
+#define PREPROCESSOR_DIV_190_2  ~, (95)
+#define PREPROCESSOR_DIV_190_5  ~, (38)
+#define PREPROCESSOR_DIV_190_10 ~, (19)
+#define PREPROCESSOR_DIV_190_19 ~, (10)
+#define PREPROCESSOR_DIV_190_38 ~, (5)
+#define PREPROCESSOR_DIV_190_95 ~, (2)
+
+#define PREPROCESSOR_DIV_192_2  ~, (96)
+#define PREPROCESSOR_DIV_192_3  ~, (64)
+#define PREPROCESSOR_DIV_192_4  ~, (48)
+#define PREPROCESSOR_DIV_192_6  ~, (32)
+#define PREPROCESSOR_DIV_192_8  ~, (24)
+#define PREPROCESSOR_DIV_192_12 ~, (16)
+#define PREPROCESSOR_DIV_192_16 ~, (12)
+#define PREPROCESSOR_DIV_192_24 ~, (8)
+#define PREPROCESSOR_DIV_192_32 ~, (6)
+#define PREPROCESSOR_DIV_192_48 ~, (4)
+#define PREPROCESSOR_DIV_192_64 ~, (3)
+#define PREPROCESSOR_DIV_192_96 ~, (2)
+
+#define PREPROCESSOR_DIV_194_2  ~, (97)
+#define PREPROCESSOR_DIV_194_97 ~, (2)
+
+#define PREPROCESSOR_DIV_195_3  ~, (65)
+#define PREPROCESSOR_DIV_195_5  ~, (39)
+#define PREPROCESSOR_DIV_195_13 ~, (15)
+#define PREPROCESSOR_DIV_195_15 ~, (13)
+#define PREPROCESSOR_DIV_195_39 ~, (5)
+#define PREPROCESSOR_DIV_195_65 ~, (3)
+
+#define PREPROCESSOR_DIV_196_2  ~, (98)
+#define PREPROCESSOR_DIV_196_4  ~, (49)
+#define PREPROCESSOR_DIV_196_7  ~, (28)
+#define PREPROCESSOR_DIV_196_14 ~, (14)
+#define PREPROCESSOR_DIV_196_28 ~, (7)
+#define PREPROCESSOR_DIV_196_49 ~, (4)
+#define PREPROCESSOR_DIV_196_98 ~, (2)
+
+#define PREPROCESSOR_DIV_198_2  ~, (99)
+#define PREPROCESSOR_DIV_198_3  ~, (66)
+#define PREPROCESSOR_DIV_198_6  ~, (33)
+#define PREPROCESSOR_DIV_198_9  ~, (22)
+#define PREPROCESSOR_DIV_198_11 ~, (18)
+#define PREPROCESSOR_DIV_198_18 ~, (11)
+#define PREPROCESSOR_DIV_198_22 ~, (9)
+#define PREPROCESSOR_DIV_198_33 ~, (6)
+#define PREPROCESSOR_DIV_198_66 ~, (3)
+#define PREPROCESSOR_DIV_198_99 ~, (2)
+
+#define PREPROCESSOR_DIV_200_2   ~, (100)
+#define PREPROCESSOR_DIV_200_4   ~, (50)
+#define PREPROCESSOR_DIV_200_5   ~, (40)
+#define PREPROCESSOR_DIV_200_8   ~, (25)
+#define PREPROCESSOR_DIV_200_10  ~, (20)
+#define PREPROCESSOR_DIV_200_20  ~, (10)
+#define PREPROCESSOR_DIV_200_25  ~, (8)
+#define PREPROCESSOR_DIV_200_40  ~, (5)
+#define PREPROCESSOR_DIV_200_50  ~, (4)
+#define PREPROCESSOR_DIV_200_100 ~, (2)
+
+#define PREPROCESSOR_DIV_201_3  ~, (67)
+#define PREPROCESSOR_DIV_201_67 ~, (3)
+
+#define PREPROCESSOR_DIV_202_2   ~, (101)
+#define PREPROCESSOR_DIV_202_101 ~, (2)
+
+#define PREPROCESSOR_DIV_203_7  ~, (29)
+#define PREPROCESSOR_DIV_203_29 ~, (7)
+
+#define PREPROCESSOR_DIV_204_2   ~, (102)
+#define PREPROCESSOR_DIV_204_3   ~, (68)
+#define PREPROCESSOR_DIV_204_4   ~, (51)
+#define PREPROCESSOR_DIV_204_6   ~, (34)
+#define PREPROCESSOR_DIV_204_12  ~, (17)
+#define PREPROCESSOR_DIV_204_17  ~, (12)
+#define PREPROCESSOR_DIV_204_34  ~, (6)
+#define PREPROCESSOR_DIV_204_51  ~, (4)
+#define PREPROCESSOR_DIV_204_68  ~, (3)
+#define PREPROCESSOR_DIV_204_102 ~, (2)
+
+#define PREPROCESSOR_DIV_205_5  ~, (41)
+#define PREPROCESSOR_DIV_205_41 ~, (5)
+
+#define PREPROCESSOR_DIV_206_2   ~, (103)
+#define PREPROCESSOR_DIV_206_103 ~, (2)
+
+#define PREPROCESSOR_DIV_207_3  ~, (69)
+#define PREPROCESSOR_DIV_207_9  ~, (23)
+#define PREPROCESSOR_DIV_207_23 ~, (9)
+#define PREPROCESSOR_DIV_207_69 ~, (3)
+
+#define PREPROCESSOR_DIV_208_2   ~, (104)
+#define PREPROCESSOR_DIV_208_4   ~, (52)
+#define PREPROCESSOR_DIV_208_8   ~, (26)
+#define PREPROCESSOR_DIV_208_13  ~, (16)
+#define PREPROCESSOR_DIV_208_16  ~, (13)
+#define PREPROCESSOR_DIV_208_26  ~, (8)
+#define PREPROCESSOR_DIV_208_52  ~, (4)
+#define PREPROCESSOR_DIV_208_104 ~, (2)
+
+#define PREPROCESSOR_DIV_209_11 ~, (19)
+#define PREPROCESSOR_DIV_209_19 ~, (11)
+
+#define PREPROCESSOR_DIV_210_2   ~, (105)
+#define PREPROCESSOR_DIV_210_3   ~, (70)
+#define PREPROCESSOR_DIV_210_5   ~, (42)
+#define PREPROCESSOR_DIV_210_6   ~, (35)
+#define PREPROCESSOR_DIV_210_7   ~, (30)
+#define PREPROCESSOR_DIV_210_10  ~, (21)
+#define PREPROCESSOR_DIV_210_14  ~, (15)
+#define PREPROCESSOR_DIV_210_15  ~, (14)
+#define PREPROCESSOR_DIV_210_21  ~, (10)
+#define PREPROCESSOR_DIV_210_30  ~, (7)
+#define PREPROCESSOR_DIV_210_35  ~, (6)
+#define PREPROCESSOR_DIV_210_42  ~, (5)
+#define PREPROCESSOR_DIV_210_70  ~, (3)
+#define PREPROCESSOR_DIV_210_105 ~, (2)
+
+#define PREPROCESSOR_DIV_212_2   ~, (106)
+#define PREPROCESSOR_DIV_212_4   ~, (53)
+#define PREPROCESSOR_DIV_212_53  ~, (4)
+#define PREPROCESSOR_DIV_212_106 ~, (2)
+
+#define PREPROCESSOR_DIV_213_3  ~, (71)
+#define PREPROCESSOR_DIV_213_71 ~, (3)
+
+#define PREPROCESSOR_DIV_214_2   ~, (107)
+#define PREPROCESSOR_DIV_214_107 ~, (2)
+
+#define PREPROCESSOR_DIV_215_5  ~, (43)
+#define PREPROCESSOR_DIV_215_43 ~, (5)
+
+#define PREPROCESSOR_DIV_216_2   ~, (108)
+#define PREPROCESSOR_DIV_216_3   ~, (72)
+#define PREPROCESSOR_DIV_216_4   ~, (54)
+#define PREPROCESSOR_DIV_216_6   ~, (36)
+#define PREPROCESSOR_DIV_216_8   ~, (27)
+#define PREPROCESSOR_DIV_216_9   ~, (24)
+#define PREPROCESSOR_DIV_216_12  ~, (18)
+#define PREPROCESSOR_DIV_216_18  ~, (12)
+#define PREPROCESSOR_DIV_216_24  ~, (9)
+#define PREPROCESSOR_DIV_216_27  ~, (8)
+#define PREPROCESSOR_DIV_216_36  ~, (6)
+#define PREPROCESSOR_DIV_216_54  ~, (4)
+#define PREPROCESSOR_DIV_216_72  ~, (3)
+#define PREPROCESSOR_DIV_216_108 ~, (2)
+
+#define PREPROCESSOR_DIV_217_7  ~, (31)
+#define PREPROCESSOR_DIV_217_31 ~, (7)
+
+#define PREPROCESSOR_DIV_218_2   ~, (109)
+#define PREPROCESSOR_DIV_218_109 ~, (2)
+
+#define PREPROCESSOR_DIV_219_3  ~, (73)
+#define PREPROCESSOR_DIV_219_73 ~, (3)
+
+#define PREPROCESSOR_DIV_220_2   ~, (110)
+#define PREPROCESSOR_DIV_220_4   ~, (55)
+#define PREPROCESSOR_DIV_220_5   ~, (44)
+#define PREPROCESSOR_DIV_220_10  ~, (22)
+#define PREPROCESSOR_DIV_220_11  ~, (20)
+#define PREPROCESSOR_DIV_220_20  ~, (11)
+#define PREPROCESSOR_DIV_220_22  ~, (10)
+#define PREPROCESSOR_DIV_220_44  ~, (5)
+#define PREPROCESSOR_DIV_220_55  ~, (4)
+#define PREPROCESSOR_DIV_220_110 ~, (2)
+
+#define PREPROCESSOR_DIV_221_13 ~, (17)
+#define PREPROCESSOR_DIV_221_17 ~, (13)
+
+#define PREPROCESSOR_DIV_222_2   ~, (111)
+#define PREPROCESSOR_DIV_222_3   ~, (74)
+#define PREPROCESSOR_DIV_222_6   ~, (37)
+#define PREPROCESSOR_DIV_222_37  ~, (6)
+#define PREPROCESSOR_DIV_222_74  ~, (3)
+#define PREPROCESSOR_DIV_222_111 ~, (2)
+
+#define PREPROCESSOR_DIV_224_2   ~, (112)
+#define PREPROCESSOR_DIV_224_4   ~, (56)
+#define PREPROCESSOR_DIV_224_7   ~, (32)
+#define PREPROCESSOR_DIV_224_8   ~, (28)
+#define PREPROCESSOR_DIV_224_14  ~, (16)
+#define PREPROCESSOR_DIV_224_16  ~, (14)
+#define PREPROCESSOR_DIV_224_28  ~, (8)
+#define PREPROCESSOR_DIV_224_32  ~, (7)
+#define PREPROCESSOR_DIV_224_56  ~, (4)
+#define PREPROCESSOR_DIV_224_112 ~, (2)
+
+#define PREPROCESSOR_DIV_225_3  ~, (75)
+#define PREPROCESSOR_DIV_225_5  ~, (45)
+#define PREPROCESSOR_DIV_225_9  ~, (25)
+#define PREPROCESSOR_DIV_225_15 ~, (15)
+#define PREPROCESSOR_DIV_225_25 ~, (9)
+#define PREPROCESSOR_DIV_225_45 ~, (5)
+#define PREPROCESSOR_DIV_225_75 ~, (3)
+
+#define PREPROCESSOR_DIV_226_2   ~, (113)
+#define PREPROCESSOR_DIV_226_113 ~, (2)
+
+#define PREPROCESSOR_DIV_228_2   ~, (114)
+#define PREPROCESSOR_DIV_228_3   ~, (76)
+#define PREPROCESSOR_DIV_228_4   ~, (57)
+#define PREPROCESSOR_DIV_228_6   ~, (38)
+#define PREPROCESSOR_DIV_228_12  ~, (19)
+#define PREPROCESSOR_DIV_228_19  ~, (12)
+#define PREPROCESSOR_DIV_228_38  ~, (6)
+#define PREPROCESSOR_DIV_228_57  ~, (4)
+#define PREPROCESSOR_DIV_228_76  ~, (3)
+#define PREPROCESSOR_DIV_228_114 ~, (2)
+
+#define PREPROCESSOR_DIV_230_2   ~, (115)
+#define PREPROCESSOR_DIV_230_5   ~, (46)
+#define PREPROCESSOR_DIV_230_10  ~, (23)
+#define PREPROCESSOR_DIV_230_23  ~, (10)
+#define PREPROCESSOR_DIV_230_46  ~, (5)
+#define PREPROCESSOR_DIV_230_115 ~, (2)
+
+#define PREPROCESSOR_DIV_231_3  ~, (77)
+#define PREPROCESSOR_DIV_231_7  ~, (33)
+#define PREPROCESSOR_DIV_231_11 ~, (21)
+#define PREPROCESSOR_DIV_231_21 ~, (11)
+#define PREPROCESSOR_DIV_231_33 ~, (7)
+#define PREPROCESSOR_DIV_231_77 ~, (3)
+
+#define PREPROCESSOR_DIV_232_2   ~, (116)
+#define PREPROCESSOR_DIV_232_4   ~, (58)
+#define PREPROCESSOR_DIV_232_8   ~, (29)
+#define PREPROCESSOR_DIV_232_29  ~, (8)
+#define PREPROCESSOR_DIV_232_58  ~, (4)
+#define PREPROCESSOR_DIV_232_116 ~, (2)
+
+#define PREPROCESSOR_DIV_234_2   ~, (117)
+#define PREPROCESSOR_DIV_234_3   ~, (78)
+#define PREPROCESSOR_DIV_234_6   ~, (39)
+#define PREPROCESSOR_DIV_234_9   ~, (26)
+#define PREPROCESSOR_DIV_234_13  ~, (18)
+#define PREPROCESSOR_DIV_234_18  ~, (13)
+#define PREPROCESSOR_DIV_234_26  ~, (9)
+#define PREPROCESSOR_DIV_234_39  ~, (6)
+#define PREPROCESSOR_DIV_234_78  ~, (3)
+#define PREPROCESSOR_DIV_234_117 ~, (2)
+
+#define PREPROCESSOR_DIV_235_5  ~, (47)
+#define PREPROCESSOR_DIV_235_47 ~, (5)
+
+#define PREPROCESSOR_DIV_236_2   ~, (118)
+#define PREPROCESSOR_DIV_236_4   ~, (59)
+#define PREPROCESSOR_DIV_236_59  ~, (4)
+#define PREPROCESSOR_DIV_236_118 ~, (2)
+
+#define PREPROCESSOR_DIV_237_3  ~, (79)
+#define PREPROCESSOR_DIV_237_79 ~, (3)
+
+#define PREPROCESSOR_DIV_238_2   ~, (119)
+#define PREPROCESSOR_DIV_238_7   ~, (34)
+#define PREPROCESSOR_DIV_238_14  ~, (17)
+#define PREPROCESSOR_DIV_238_17  ~, (14)
+#define PREPROCESSOR_DIV_238_34  ~, (7)
+#define PREPROCESSOR_DIV_238_119 ~, (2)
+
+#define PREPROCESSOR_DIV_240_2   ~, (120)
+#define PREPROCESSOR_DIV_240_3   ~, (80)
+#define PREPROCESSOR_DIV_240_4   ~, (60)
+#define PREPROCESSOR_DIV_240_5   ~, (48)
+#define PREPROCESSOR_DIV_240_6   ~, (40)
+#define PREPROCESSOR_DIV_240_8   ~, (30)
+#define PREPROCESSOR_DIV_240_10  ~, (24)
+#define PREPROCESSOR_DIV_240_12  ~, (20)
+#define PREPROCESSOR_DIV_240_15  ~, (16)
+#define PREPROCESSOR_DIV_240_16  ~, (15)
+#define PREPROCESSOR_DIV_240_20  ~, (12)
+#define PREPROCESSOR_DIV_240_24  ~, (10)
+#define PREPROCESSOR_DIV_240_30  ~, (8)
+#define PREPROCESSOR_DIV_240_40  ~, (6)
+#define PREPROCESSOR_DIV_240_48  ~, (5)
+#define PREPROCESSOR_DIV_240_60  ~, (4)
+#define PREPROCESSOR_DIV_240_80  ~, (3)
+#define PREPROCESSOR_DIV_240_120 ~, (2)
+
+#define PREPROCESSOR_DIV_242_2   ~, (121)
+#define PREPROCESSOR_DIV_242_11  ~, (22)
+#define PREPROCESSOR_DIV_242_22  ~, (11)
+#define PREPROCESSOR_DIV_242_121 ~, (2)
+
+#define PREPROCESSOR_DIV_243_3  ~, (81)
+#define PREPROCESSOR_DIV_243_9  ~, (27)
+#define PREPROCESSOR_DIV_243_27 ~, (9)
+#define PREPROCESSOR_DIV_243_81 ~, (3)
+
+#define PREPROCESSOR_DIV_244_2   ~, (122)
+#define PREPROCESSOR_DIV_244_4   ~, (61)
+#define PREPROCESSOR_DIV_244_61  ~, (4)
+#define PREPROCESSOR_DIV_244_122 ~, (2)
+
+#define PREPROCESSOR_DIV_245_5  ~, (49)
+#define PREPROCESSOR_DIV_245_7  ~, (35)
+#define PREPROCESSOR_DIV_245_35 ~, (7)
+#define PREPROCESSOR_DIV_245_49 ~, (5)
+
+#define PREPROCESSOR_DIV_246_2   ~, (123)
+#define PREPROCESSOR_DIV_246_3   ~, (82)
+#define PREPROCESSOR_DIV_246_6   ~, (41)
+#define PREPROCESSOR_DIV_246_41  ~, (6)
+#define PREPROCESSOR_DIV_246_82  ~, (3)
+#define PREPROCESSOR_DIV_246_123 ~, (2)
+
+#define PREPROCESSOR_DIV_247_13 ~, (19)
+#define PREPROCESSOR_DIV_247_19 ~, (13)
+
+#define PREPROCESSOR_DIV_248_2   ~, (124)
+#define PREPROCESSOR_DIV_248_4   ~, (62)
+#define PREPROCESSOR_DIV_248_8   ~, (31)
+#define PREPROCESSOR_DIV_248_31  ~, (8)
+#define PREPROCESSOR_DIV_248_62  ~, (4)
+#define PREPROCESSOR_DIV_248_124 ~, (2)
+
+#define PREPROCESSOR_DIV_249_3  ~, (83)
+#define PREPROCESSOR_DIV_249_83 ~, (3)
+
+#define PREPROCESSOR_DIV_250_2   ~, (125)
+#define PREPROCESSOR_DIV_250_5   ~, (50)
+#define PREPROCESSOR_DIV_250_10  ~, (25)
+#define PREPROCESSOR_DIV_250_25  ~, (10)
+#define PREPROCESSOR_DIV_250_50  ~, (5)
+#define PREPROCESSOR_DIV_250_125 ~, (2)
+
+#define PREPROCESSOR_DIV_252_2   ~, (126)
+#define PREPROCESSOR_DIV_252_3   ~, (84)
+#define PREPROCESSOR_DIV_252_4   ~, (63)
+#define PREPROCESSOR_DIV_252_6   ~, (42)
+#define PREPROCESSOR_DIV_252_7   ~, (36)
+#define PREPROCESSOR_DIV_252_9   ~, (28)
+#define PREPROCESSOR_DIV_252_12  ~, (21)
+#define PREPROCESSOR_DIV_252_14  ~, (18)
+#define PREPROCESSOR_DIV_252_18  ~, (14)
+#define PREPROCESSOR_DIV_252_21  ~, (12)
+#define PREPROCESSOR_DIV_252_28  ~, (9)
+#define PREPROCESSOR_DIV_252_36  ~, (7)
+#define PREPROCESSOR_DIV_252_42  ~, (6)
+#define PREPROCESSOR_DIV_252_63  ~, (4)
+#define PREPROCESSOR_DIV_252_84  ~, (3)
+#define PREPROCESSOR_DIV_252_126 ~, (2)
+
+#define PREPROCESSOR_DIV_253_11 ~, (23)
+#define PREPROCESSOR_DIV_253_23 ~, (11)
+
+#define PREPROCESSOR_DIV_254_2   ~, (127)
+#define PREPROCESSOR_DIV_254_127 ~, (2)
+
+#define PREPROCESSOR_DIV_255_3  ~, (85)
+#define PREPROCESSOR_DIV_255_5  ~, (51)
+#define PREPROCESSOR_DIV_255_15 ~, (17)
+#define PREPROCESSOR_DIV_255_17 ~, (15)
+#define PREPROCESSOR_DIV_255_51 ~, (5)
+#define PREPROCESSOR_DIV_255_85 ~, (3)
+
+
+#endif /* __PREPROCESSOR_DIV_H__ */
