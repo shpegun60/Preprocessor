@@ -3,7 +3,7 @@
  
  # Supporeted Compilers:
  *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
-              you must add /Zc:preprocessor to your compilation flags, see "https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/"
+              you must add /Zc:preprocessor to your compilation flags, see https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/
  *      GCC: All compilers supported
  *      Clang: All compilers supported
  
