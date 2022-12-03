@@ -1,5 +1,5 @@
 # Preprocessor
- *  PREPROCESSOR - a library for invoking the devil in the C99 or later programming language
+ * PREPROCESSOR - a library that allows you to summon the devil or other evil spirits in the programming language C99 or later
  
  # Supporeted Compilers:
  *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
