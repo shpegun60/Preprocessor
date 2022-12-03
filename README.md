@@ -12,6 +12,6 @@
  # Supported C standards:
  *      All after GNU/ISO C99
  
- Compilation checked with "Compiler Explorer", you can import file compiler_explorer_project.zip
+ Compilation checked with "Compiler Explorer", you can import file 'compiler_explorer_project.zip'
  * Github: https://github.com/compiler-explorer/compiler-explorer
  * Web: https://godbolt.org/
