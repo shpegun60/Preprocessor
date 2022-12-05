@@ -18,3 +18,5 @@
  Compilation checked with "Compiler Explorer", you can import file: compiler_explorer_project.zip
  * Github: https://github.com/compiler-explorer/compiler-explorer
  * Web: https://godbolt.org/
+ # Evil spirit looks like:
+<img src="evil_spirit/evil.jpg" width="350" title="hover text">
