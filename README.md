@@ -19,4 +19,4 @@
  * Github: https://github.com/compiler-explorer/compiler-explorer
  * Web: https://godbolt.org/
  # Evil spirit looks like:
-<img src="evil_spirit/evil.jpg" width="350" title="hover text">
+<img src="evil_spirit/evil.jpg" width="650" title="hover text">
