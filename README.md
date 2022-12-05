@@ -4,8 +4,8 @@
  # Supporeted Compilers:
  *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
          you must add /Zc:preprocessor to your compilation flags
- - can visit for msvc: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/
- and: https://stackoverflow.com/questions/9183993/msvc-variadic-macro-expansion
+ - Announcing full support for a C/C++ conformant preprocessor in MSVC: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/
+ - Stackoverflow problem: https://stackoverflow.com/questions/9183993/msvc-variadic-macro-expansion
  , and instruction for this flag: https://learn.microsoft.com/en-us/cpp/build/reference/zc-preprocessor?view=msvc-170, 
  partial supporting on old versions (not tested) with other compilation flag, you can read here: https://learn.microsoft.com/en-us/cpp/build/reference/experimental-preprocessor?view=msvc-170
  
