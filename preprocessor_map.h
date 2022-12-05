@@ -7,6 +7,7 @@
 #ifndef __PREPROCESSOR_MAP_H__
 #define __PREPROCESSOR_MAP_H__ 1
 
+#include "preprocessor_base.h"
 #include "preprocessor_arguments.h"
 #include "preprocessor_if.h"
 #include "preprocessor_concatenation.h"

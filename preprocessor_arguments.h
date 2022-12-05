@@ -91,7 +91,7 @@ extern "C" {
 #   define PREPROCESSOR_ARGS_TAIL_IMPL(_x, ...) __VA_ARGS__
 #
 #   define PREPROCESSOR_ARGS_SND(...)            PREPROCESSOR_ARGS_SND_IMPL(__VA_ARGS__, ~)
-#   define PREPROCESSOR_ARGS_SND_IMPL(_x, y, ...) y
+#   define PREPROCESSOR_ARGS_SND_IMPL(_x, _y, ...) _y
 
 
 

@@ -9,8 +9,6 @@
 
 /* -- Headers -- */
 
-#include "preprocessor_arguments.h"
-
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -29,8 +27,12 @@ extern "C" {
  * PREPROCESSOR_IS_PROBE(PREPROCESSOR_PROBE())      // Expands to 1
  * PREPROCESSOR_IS_PROBE(xxx)                       // Expands to 0
  */
+
+#   define PREPROCESSOR_IS_PROBE_SND(...)            PREPROCESSOR_IS_PROBE_SND_IMPL(__VA_ARGS__, ~)
+#   define PREPROCESSOR_IS_PROBE_SND_IMPL(_x, _y, ...) _y
+
 #define PREPROCESSOR_IS_PROBE(...) _PREPROCESSOR_IS_PROBE(__VA_ARGS__) // expand all arguments
-#define _PREPROCESSOR_IS_PROBE(...) PREPROCESSOR_ARGS_SND(__VA_ARGS__, 0)
+#define _PREPROCESSOR_IS_PROBE(...) PREPROCESSOR_IS_PROBE_SND(__VA_ARGS__, 0)
 #define PREPROCESSOR_PROBE() ~, 1
 
 
