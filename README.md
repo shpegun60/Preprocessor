@@ -1,7 +1,7 @@
 # Preprocessor
  * PREPROCESSOR - a library that allows you to summon the devil or other evil spirits in the programming language C99 or later, and no joke, it allows you to use preprocessor metaprogramming in C
  
- # Supporeted Compilers:
+ # Supported Compilers:
  *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
          you must add /Zc:preprocessor to your compilation flags
  - Announcing full support for a C/C++ conformant preprocessor in MSVC: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/
