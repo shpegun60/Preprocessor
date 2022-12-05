@@ -6,6 +6,7 @@
          you must add /Zc:preprocessor to your compilation flags
  can visit for msvc: https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/
  and: https://stackoverflow.com/questions/9183993/msvc-variadic-macro-expansion
+ and instruction for this flag: https://learn.microsoft.com/en-us/cpp/build/reference/zc-preprocessor?view=msvc-170
  
  *      GCC: All compilers supported
  *      Clang: All compilers supported
