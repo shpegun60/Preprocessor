@@ -5,7 +5,7 @@
  *
  *  Supporeted Compilers:
  *      MSVC: After Visual Studio 2019 verion 16.6;	Compiler version after--> msvc v19.26, 
- *             you must add /Zc:preprocessor to your compilation flags.
+ *             you must add /Zc:preprocessor to your compilation flags. Instruction: https://learn.microsoft.com/en-us/cpp/build/reference/zc-preprocessor?view=msvc-170
  *      GCC: All compilers supported
  *      Clang: All compilers supported
  *
