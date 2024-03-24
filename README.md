@@ -20,3 +20,28 @@
  * Web: https://godbolt.org/
  # Evil spirit looks like:
 <img src="evil_spirit/evil.jpg" width="650" title="hover text">
+
+'''
+#include <stdint.h>
+
+void foo(PREPROCESSOR_CTX_TYPE(ctx))
+{
+    PREPROCESSOR_CTX_GET(ctx,
+                                   uint8_t  *val1,
+                                   uint16_t *val2,
+                                   uint32_t *val3)
+}
+
+int main()
+{
+    uint8_t val1 = 254;
+    uint16_t val2 = 12896;
+    uint32_t val3 = 40000000;
+
+    foo(PREPROCESSOR_CTX_CAPTURE({
+                                    &val1,
+                                    &val2,
+                                    &val3
+                                 }));
+}
+'''
