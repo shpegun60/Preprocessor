@@ -21,7 +21,7 @@
  # Evil spirit looks like:
 <img src="evil_spirit/evil.jpg" width="650" title="hover text">
 
-'''
+```c
 #include <stdint.h>
 
 void foo(PREPROCESSOR_CTX_TYPE(ctx))
@@ -44,4 +44,4 @@ int main()
                                     &val3
                                  }));
 }
-'''
+```
