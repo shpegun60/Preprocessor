@@ -21,8 +21,10 @@
  # Evil spirit looks like:
 <img src="evil_spirit/evil.jpg" width="650" title="hover text">
 
+# EXAMPLE Preprocessor context capture
 ```c
 #include <stdint.h>
+#include "preprocessor_ctx.h"
 
 void foo(PREPROCESSOR_CTX_TYPE(ctx))
 {
