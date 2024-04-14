@@ -35,20 +35,25 @@
 #include "preprocessor_logical.h"
 #include "preprocessor_map.h"
 #include "preprocessor_nat_eq.h"
+#include "preprocessor_nat_op.h"
 #include "preprocessor_serial.h"
 #include "preprocessor_stringify.h"
 #include "preprocessor_symbol.h"
 #include "preprocessor_template.h"
 #include "preprocessor_tuple.h"
 #include "preprocessor_type_eq.h"
+#include "preprocessor_unused.h"
 
 
 #if defined(_MSC_VER)
+#   define STRINGIZE_HELPER(x) #x
+#   define STRINGIZE(x) STRINGIZE_HELPER(x)
+#   define WARNING(desc) message(__FILE__ "(" STRINGIZE(__LINE__) ") : Warning: " #desc)
 #
 #   if (_MSC_VER < 1926)
 #       error do not supported MSVC compiler, supports only after Visual Studio 2019 verion 16.6 and compiler version after--> msvc v19.26
 #   else
-#       warning _MSC_VER: User must add /Zc:preprocessor to compilation flags, see "https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/"
+#       pragma WARNING("_MSC_VER: User must add /Zc:preprocessor to compilation flags see https://devblogs.microsoft.com/cppblog/announcing-full-support-for-a-c-c-conformant-preprocessor-in-msvc/")
 #   endif /* (_MSC_VER < 1926) */
 #
 #endif /* defined(_MSC_VER) */

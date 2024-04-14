@@ -243,4 +243,26 @@
 #define PREPROCESSOR_C_TYPE_DETECTOR_sreg_sreg          ()
 
 
+//typedef int8_t int8;
+//typedef int16_t int16;
+//typedef int32_t int32;
+//typedef int64_t int64;
+
+//typedef uint8_t uint8;
+//typedef uint16_t uint16;
+//typedef uint32_t uint32;
+//typedef uint64_t uint64;
+
+//typedef uint8 byte;
+
+#define PREPROCESSOR_C_TYPE_DETECTOR_int8_int8                  ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_int16_int16                ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_int32_int32                ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_int64_int64                ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_uint8_uint8                ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_uint16_uint16              ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_uint32_uint32              ()
+#define PREPROCESSOR_C_TYPE_DETECTOR_uint64_uint64              ()
+
+
 #endif // __PREPROCESSOR_TYPE_EQ_H__

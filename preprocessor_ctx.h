@@ -14,6 +14,11 @@
  */
 #define PREPROCESSOR_CTX_TYPE_GET() void* const * const
 #define PREPROCESSOR_CTX_TYPE(name) PREPROCESSOR_CTX_TYPE_GET() name
+
+#define PREPROCESSOR_CTX_MUTABLE_TYPE_GET() void**
+#define PREPROCESSOR_CTX_MUTABLE_TYPE(name) PREPROCESSOR_CTX_MUTABLE_TYPE_GET() name
+
+
 #define PREPROCESSOR_CTX_TYPE_CAST(name) ((void* const) name)
 
 
@@ -32,15 +37,26 @@
 /*********************************************************************************************************************
  *  PREPROCESSOR CONTEXT GET
  *
- *          PREPROCESSOR_CTX_CAPTURE_GET(ctx,
- *                               uint8_t  *val1,
- *                               uint16_t *val2,
- *                               uint32_t *val3)
+ *          PREPROCESSOR_CTX_GET(ctx,
+ *                               uint8_t  * val1,
+ *                               uint16_t * val2,
+ *                               uint32_t * val3)
  *
  *                               // expands to-->
- *                              uint8_t *val1 = ctx[0];
- *                              uint16_t *val2 = ctx[1];
- *                              uint32_t *val3 = ctx[2];
+ *                              uint8_t  * val1 = ctx[0];
+ *                              uint16_t * val2 = ctx[1];
+ *                              uint32_t * val3 = ctx[2];
+ *
+ *  * ATTENTION!!! For deep optimization you need write "const" in pointers -->
+ *      PREPROCESSOR_CTX_GET(ctx,
+ *                               uint8_t  * const val1,
+ *                               uint16_t * const val2,
+ *                               uint32_t * const val3)
+ *      OR BETTER:
+ *      PREPROCESSOR_CTX_GET(ctx,
+ *                               const uint8_t  * const val1,
+ *                               const uint16_t * const val2,
+ *                               const uint32_t * const val3)
  *
  */
 
@@ -68,9 +84,9 @@
 void foo(PREPROCESSOR_CTX_TYPE(ctx))
 {
     PREPROCESSOR_CTX_GET(ctx,
-                                   uint8_t  *val1,
-                                   uint16_t *val2,
-                                   uint32_t *val3)
+                                   const uint8_t  * const val1,
+                                   const uint16_t * const val2,
+                                   const uint32_t * const val3)
 }
 
 int main()
