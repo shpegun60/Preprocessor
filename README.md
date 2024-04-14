@@ -29,9 +29,9 @@
 void foo(PREPROCESSOR_CTX_TYPE(ctx))
 {
     PREPROCESSOR_CTX_GET(ctx,
-                                   uint8_t  *val1,
-                                   uint16_t *val2,
-                                   uint32_t *val3)
+                                   const uint8_t  * const val1,
+                                   const uint16_t * const val2,
+                                   const uint32_t * const val3)
 }
 
 int main()
@@ -46,4 +46,5 @@ int main()
                                     &val3
                                  }));
 }
+
 ```
