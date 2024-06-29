@@ -24,8 +24,10 @@
 
 # EXAMPLE Preprocessor context capture
 1)
-<img src="evil_spirit/future.jpg" width="300" title="hover text">
-1)
+<img src="evil_spirit/future.jpg" width="600" title="hover text">
+
+2)
+
 ```c
 #include <stdint.h>
 #include "preprocessor_ctx.h"
