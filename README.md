@@ -20,13 +20,17 @@
  * Github: https://github.com/compiler-explorer/compiler-explorer
  * Web: https://godbolt.org/
  # Evil spirit looks like:
+
+1)
+
 <img src="evil_spirit/evil.jpg" width="650" title="hover text">
 
-# EXAMPLE Preprocessor context capture
-1)
+2)
+
 <img src="evil_spirit/future.jpg" width="600" title="hover text">
 
-2)
+
+# EXAMPLE Preprocessor context capture
 
 ```c
 #include <stdint.h>
